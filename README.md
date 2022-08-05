@@ -6,3 +6,8 @@
 1. 日本語環境
 1. 基本ライブラリ
 1. `.bashrc`と`.vimrc`
+2. X11
+
+# トラブルシュート 
+### X11アプリで "No protocol specified" がでたら
+`xhost +` をホスト側で実行するべし
