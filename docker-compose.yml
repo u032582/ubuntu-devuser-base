@@ -1,0 +1,15 @@
+version: "3.0"
+services:
+  serv:
+    image: useradd:1.0
+    build:
+      context: .
+      args:
+        - USERNAME=devuser
+    environment:
+      - DISPLAY=${DISPLAY}
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - $HOME/.Xauthority:/root/.Xauthority
+
+    restart: always
