@@ -6,5 +6,6 @@ vscode:
     - jebbs.plantuml
 tasks:
   - init: |
-      unzip -d /tmp/ext ./extensions/shd101wyy.markdown-preview-enhanced-0.6.3.vsix
+      unzip -d /tmp/ext ./gitpod/extensions/shd101wyy.markdown-preview-enhanced-0.6.3.vsix
       mv /tmp/ext/extension /workspace/.vscode-remote/extensions/shd101wyy.markdown-preview-enhanced-0.6.3
+      rm -rf /tmp/ext
