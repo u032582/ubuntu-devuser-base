@@ -4,3 +4,6 @@ image:
 vscode:
   extensions:
     - jebbs.plantuml
+tasks:
+  - init: cp -r ./extensions /workspace/.vscode-remote
+
