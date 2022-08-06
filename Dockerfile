@@ -5,7 +5,7 @@ FROM ubuntu:jammy
 # update
 RUN apt-get update -qq && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y tzdata \
-    sudo ssh curl build-essential vim git \
+    sudo ssh curl build-essential vim git unzip netcat lsof iproute2 iputils-ping \
     language-pack-ja language-pack-ja-base \
     fonts-noto-cjk ttf-mscorefonts-installer fonts-ipafont fonts-ipaexfont \
     && rm -rf /var/cache/apk/*
