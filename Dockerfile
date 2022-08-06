@@ -8,7 +8,7 @@ RUN apt-get update -qq && \
     sudo ssh curl build-essential vim git unzip netcat lsof iproute2 iputils-ping \
     language-pack-ja language-pack-ja-base \
     fontconfig fonts-noto-cjk ttf-mscorefonts-installer fonts-ipafont fonts-ipaexfont \
-    && rm -rf /var/cache/apk/*
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 ENV TZ Asia/Tokyo
 
