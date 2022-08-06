@@ -1,7 +1,7 @@
 version: "3.0"
 services:
   serv:
-    image: useradd:1.0
+    image: ubuntu-devuser:latest
     build:
       context: .
       args:
@@ -11,5 +11,3 @@ services:
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - $HOME/.Xauthority:/root/.Xauthority
-
-    restart: always
