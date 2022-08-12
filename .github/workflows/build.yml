@@ -20,7 +20,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4
         with:
-          images: ghcr.io/u032582/ubuntu-devuser-base
+          images: ghcr.io/u032582/ubuntu-devuser
 
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v1
