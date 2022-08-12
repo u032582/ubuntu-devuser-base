@@ -41,6 +41,8 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
+          tags: |
+            ghcr.io/${{GITHUB_ACTION_REPOSITORY}}:${{ steps.prepare_build_arg.outputs.CURRENT_TAG }}
           labels: |
             org.opencontainers.image.source=${{ github.event.repository.clone_url }}
           cache-from: type=local,src=/tmp/.buildx-cache
