@@ -10,5 +10,12 @@ RUN groupadd -g $GID $GROUPNAME && \
     useradd -m -s /bin/bash -u $UID -g $GID $USERNAME && \
     echo "${USERNAME}:${USERNAME}" | chpasswd
 
-RUN echo 'Defaults visiblepw'             >> /etc/sudoers
 RUN echo "${USERNAME} ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+
+ARG USERNAME=webui
+ARG GROUPNAME=webui
+ARG UID=133332
+ARG GID=133332
+RUN groupadd -g $GID $GROUPNAME && \
+    useradd -m -s /bin/bash -u $UID -g $GID $USERNAME && \
+    echo "${USERNAME}:${USERNAME}" | chpasswd
