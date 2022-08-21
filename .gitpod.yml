@@ -1,6 +1,6 @@
 
 image:
-  file: Dockerfile
+  file: .gitpod.Dockerfile
 vscode:
   extensions:
     - jebbs.plantuml
