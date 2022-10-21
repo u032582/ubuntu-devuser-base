@@ -14,14 +14,15 @@ ENV TZ Asia/Tokyo
 
 ARG USERNAME=devuser
 ARG GROUPNAME=devusers
-ARG UID=1001
-ARG GID=1001
+ARG UID=9999
+ARG GID=9999
 RUN groupadd -g $GID $GROUPNAME && \
     useradd -m -s /bin/bash -u $UID -g $GID $USERNAME && \
     echo "${USERNAME}:${USERNAME}" | chpasswd
 
 RUN echo 'Defaults visiblepw'             >> /etc/sudoers
 RUN echo "${USERNAME} ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+
 
 USER $USERNAME
 WORKDIR /home/$USERNAME/
@@ -31,4 +32,7 @@ RUN echo 'set nocompatible' >> .vimrc && echo 'set backspace=indent,eol,start' >
 RUN curl -s "https://get.sdkman.io" | bash 
 RUN /bin/bash -c "source $HOME/.sdkman/bin/sdkman-init.sh"
 
-CMD ["/bin/bash", "-c", "trap : TERM INT; sleep infinity & wait"]
+USER root
+ADD entrypoint.sh /
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["bash","/entrypoint.sh"]
