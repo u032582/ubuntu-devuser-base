@@ -35,4 +35,4 @@ RUN /bin/bash -c "source $HOME/.sdkman/bin/sdkman-init.sh"
 USER root
 ADD entrypoint.sh /
 RUN chmod +x /entrypoint.sh
-ENTRYPOINT ["bash","/entrypoint.sh"]
+ENTRYPOINT ["bash","-c","/entrypoint.sh"]
