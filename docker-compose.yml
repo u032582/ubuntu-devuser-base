@@ -4,6 +4,9 @@ services:
     image: ghcr.io/u032582/ubuntu-devuser:latest
     build:
       context: .
+      args:
+        - UID=${USERID:-1001}
+        - GID=${GID:-1001}
     environment:
       - DISPLAY=${DISPLAY}
       - USERID=${USERID:-1001}
