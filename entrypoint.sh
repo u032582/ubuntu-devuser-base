@@ -1,6 +1,6 @@
-sudo usermod -u ${USERID:-999} devuser
-sudo groupmod -g ${GID:-999} devusers
-sudo usermod -aG devusers devuser
+sudo usermod -u ${USERID:1001} devuser
+sudo groupmod -g ${GID:1001} devuser
+sudo usermod -aG devuser devuser
 
 trap : TERM INT
 exec "$@"

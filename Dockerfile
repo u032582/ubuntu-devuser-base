@@ -13,9 +13,9 @@ RUN apt-get update -qq && \
 ENV TZ Asia/Tokyo
 
 ARG USERNAME=devuser
-ARG GROUPNAME=devusers
-ARG UID=9999
-ARG GID=9999
+ARG GROUPNAME=devuser
+ARG UID=1001
+ARG GID=1001
 RUN groupadd -g $GID $GROUPNAME && \
     useradd -m -s /bin/bash -u $UID -g $GID $USERNAME && \
     echo "${USERNAME}:${USERNAME}" | chpasswd
